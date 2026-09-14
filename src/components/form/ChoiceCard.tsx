@@ -15,10 +15,10 @@ export default function ChoiceCard({
 }) {
   return (
     <label
-      className={`flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-3 transition ${
+      className={`flex cursor-pointer items-start gap-3 rounded-lg border px-4 py-3 transition duration-150 ${
         checked
-          ? "border-techblue bg-techblue/5"
-          : "border-black/10 hover:border-techblue/40"
+          ? "border-techblue bg-techblue/5 shadow-sm"
+          : "border-black/10 hover:-translate-y-0.5 hover:border-techblue/40 hover:shadow-sm"
       }`}
     >
       <input

@@ -84,7 +84,7 @@ export default function ConfirmacaoClient() {
         </p>
         <button
           onClick={() => window.location.reload()}
-          className="mt-8 inline-block rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:bg-twilight"
+          className="mt-8 inline-block rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:scale-105 hover:bg-twilight"
         >
           Atualizar página
         </button>
@@ -104,7 +104,7 @@ export default function ConfirmacaoClient() {
         </p>
         <button
           onClick={() => window.location.reload()}
-          className="mt-8 inline-block rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:bg-twilight"
+          className="mt-8 inline-block rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:scale-105 hover:bg-twilight"
         >
           Tentar novamente
         </button>
@@ -147,7 +147,7 @@ export default function ConfirmacaoClient() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-block rounded-full bg-techblue px-6 py-3 font-display text-sm font-semibold text-white transition hover:bg-twilight"
+          className="mt-5 inline-block rounded-full bg-techblue px-6 py-3 font-display text-sm font-semibold text-white transition hover:scale-105 hover:bg-twilight"
         >
           Chamar o Hugo no WhatsApp
         </a>
@@ -166,7 +166,7 @@ export default function ConfirmacaoClient() {
         </p>
         <Link
           href={`/formulario-completo?id=${triagemId ?? ""}`}
-          className="mt-5 inline-block rounded-full bg-prussia px-6 py-3 font-display text-sm font-semibold text-white transition hover:bg-oxford"
+          className="mt-5 inline-block rounded-full bg-prussia px-6 py-3 font-display text-sm font-semibold text-white transition hover:scale-105 hover:bg-oxford"
         >
           Preencher formulário completo
         </Link>

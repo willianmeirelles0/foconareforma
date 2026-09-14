@@ -12,14 +12,14 @@ import FieldLabel from "@/components/form/FieldLabel";
 type ContatoState = {
   nome: string;
   email: string;
-  cpfCnpj: string;
+  cnpj: string;
   telefone: string;
 };
 
 const CONTATO_INICIAL: ContatoState = {
   nome: "",
   email: "",
-  cpfCnpj: "",
+  cnpj: "",
   telefone: "",
 };
 
@@ -43,7 +43,7 @@ export default function ResultadoClient() {
         </p>
         <Link
           href="/triagem"
-          className="mt-8 inline-block rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:bg-twilight"
+          className="mt-8 inline-block rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:scale-105 hover:bg-twilight"
         >
           Refazer triagem
         </Link>
@@ -84,7 +84,7 @@ export default function ResultadoClient() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-block rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:bg-twilight"
+          className="mt-8 inline-block rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:scale-105 hover:bg-twilight"
         >
           Falar com a Eliane no WhatsApp
         </a>
@@ -97,9 +97,9 @@ export default function ResultadoClient() {
   function validarContato(): string | null {
     if (!contato.nome.trim()) return "Informe o seu nome.";
     if (!/^\S+@\S+\.\S+$/.test(contato.email)) return "Informe um e-mail válido.";
-    const cpfCnpjDigits = contato.cpfCnpj.replace(/\D/g, "");
-    if (cpfCnpjDigits.length !== 11 && cpfCnpjDigits.length !== 14) {
-      return "Informe um CPF ou CNPJ válido.";
+    const cnpjDigits = contato.cnpj.replace(/\D/g, "");
+    if (cnpjDigits.length !== 14) {
+      return "Informe um CNPJ válido.";
     }
     const telefoneDigits = contato.telefone.replace(/\D/g, "");
     if (telefoneDigits.length < 10) return "Informe um telefone válido com DDD.";
@@ -216,15 +216,17 @@ export default function ResultadoClient() {
         </div>
 
         <div>
-          <FieldLabel htmlFor="cpfCnpj" required>
-            CPF ou CNPJ
+          <FieldLabel htmlFor="cnpj" required>
+            CNPJ
           </FieldLabel>
           <input
-            id="cpfCnpj"
+            id="cnpj"
             type="text"
-            value={contato.cpfCnpj}
+            inputMode="numeric"
+            placeholder="00.000.000/0000-00"
+            value={contato.cnpj}
             onChange={(event) =>
-              setContato((prev) => ({ ...prev, cpfCnpj: event.target.value }))
+              setContato((prev) => ({ ...prev, cnpj: event.target.value }))
             }
             className="mt-2 w-full rounded-md border border-black/15 px-4 py-3 font-sans text-sm outline-none focus:border-techblue"
           />
@@ -254,7 +256,7 @@ export default function ResultadoClient() {
         <button
           type="submit"
           disabled={loadingCheckout}
-          className="w-full rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:bg-twilight disabled:opacity-60 sm:w-auto"
+          className="w-full rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:scale-105 hover:bg-twilight disabled:opacity-60 sm:w-auto"
         >
           {loadingCheckout ? "Preparando pagamento..." : "Ir para o pagamento"}
         </button>

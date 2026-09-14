@@ -9,7 +9,7 @@ interface CheckoutPayload {
   contato: {
     nome: string;
     email: string;
-    cpfCnpj: string;
+    cnpj: string;
     telefone: string;
   };
 }
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
       customerData: {
         name: contato.nome,
         email: contato.email,
-        cpfCnpj: contato.cpfCnpj.replace(/\D/g, ""),
+        cpfCnpj: contato.cnpj.replace(/\D/g, ""),
         phone: contato.telefone.replace(/\D/g, ""),
       },
       externalReference: triagemId,

@@ -261,7 +261,7 @@ export default function TriagemPage() {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:bg-twilight disabled:opacity-60 sm:w-auto"
+          className="w-full rounded-full bg-techblue px-8 py-4 font-display text-base font-semibold text-white transition hover:scale-105 hover:bg-twilight disabled:opacity-60 sm:w-auto"
         >
           Ver meu resultado
         </button>
