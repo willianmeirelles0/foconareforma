@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --color-prussia: #0c1a2d;
+  --color-oxford: #183359;
+  --color-twilight: #244c85;
+  --color-techblue: #3065b1;
+  --color-honey: #e8bf6f;
+  --color-carbon: #202020;
+  --color-graphite: #404040;
+  --color-steel: #606060;
+  --color-white: #ffffff;
+
+  --background: var(--color-white);
+  --foreground: var(--color-carbon);
+}
+
+@theme inline {
+  --color-prussia: var(--color-prussia);
+  --color-oxford: var(--color-oxford);
+  --color-twilight: var(--color-twilight);
+  --color-techblue: var(--color-techblue);
+  --color-honey: var(--color-honey);
+  --color-carbon: var(--color-carbon);
+  --color-graphite: var(--color-graphite);
+  --color-steel: var(--color-steel);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-serif: var(--font-literata);
+  --font-display: var(--font-blinker);
+  --font-sans: var(--font-hanken);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-hanken), system-ui, sans-serif;
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-literata), Georgia, serif;
+  }
+  .font-display {
+    font-family: var(--font-blinker), system-ui, sans-serif;
+  }
+  .font-sans {
+    font-family: var(--font-hanken), system-ui, sans-serif;
+  }
+}
