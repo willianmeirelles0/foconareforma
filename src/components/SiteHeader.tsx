@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { FOCO_INSTITUCIONAL_URL } from "@/lib/site";
 
@@ -23,12 +24,16 @@ export default function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <div className="flex flex-col leading-none">
-          <Link
-            href="/"
-            className="font-display text-lg font-bold tracking-tight text-prussia transition-opacity hover:opacity-80 sm:text-xl"
-          >
-            FOCO <span className="text-techblue">NA REFORMA</span>
+        <div className="flex flex-col">
+          <Link href="/" className="transition-opacity hover:opacity-80">
+            <Image
+              src="/brand/logo-light-bg.png"
+              alt="Foco na Reforma"
+              width={1141}
+              height={1200}
+              priority
+              className="h-11 w-auto sm:h-12"
+            />
           </Link>
           <span className="mt-1 text-[11px] font-sans uppercase tracking-wide text-steel">
             Uma frente da{" "}

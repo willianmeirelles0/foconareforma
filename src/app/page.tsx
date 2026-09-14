@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
@@ -58,22 +59,36 @@ export default function HomePage() {
         />
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
           <Reveal>
-            <p className="font-display text-sm font-semibold uppercase tracking-widest text-honey">
+            <Image
+              src="/brand/logo-dark-bg.png"
+              alt="Foco na Reforma"
+              width={1147}
+              height={1200}
+              priority
+              className="h-20 w-auto sm:h-24"
+            />
+          </Reveal>
+          <Reveal delayMs={40}>
+            <p className="mt-8 font-display text-sm font-semibold uppercase tracking-widest text-honey">
               Diagnóstico de Impacto da Reforma Tributária
             </p>
           </Reveal>
           <Reveal delayMs={80}>
-            <h1 className="mt-4 max-w-3xl font-serif text-3xl leading-tight text-white sm:text-5xl">
-              Descubra quanto a sua empresa vai pagar em cada regime tributário
-              depois da Reforma.
+            <h1 className="mt-4 max-w-3xl font-display text-3xl leading-tight sm:text-5xl">
+              <span className="font-black text-white">
+                Até fevereiro de 2027, toda empresa vai decidir o seu regime
+                tributário para a Reforma.
+              </span>{" "}
+              <span className="font-normal text-techblue">
+                A diferença é decidir sabendo quanto isso custa.
+              </span>
             </h1>
           </Reveal>
           <Reveal delayMs={160}>
             <p className="mt-6 max-w-2xl font-sans text-base text-white/80 sm:text-lg">
               A Foco Gestão Contábil simula o impacto da Reforma Tributária no
               seu negócio, compara Simples Nacional, Lucro Presumido e Lucro
-              Real, e orienta qual caminho seguir. Inteligência que organiza,
-              orienta e gera segurança para a sua decisão.
+              Real, e mostra qual caminho seguir.
             </p>
           </Reveal>
           <Reveal delayMs={240}>

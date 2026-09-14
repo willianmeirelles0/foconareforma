@@ -1,12 +1,17 @@
+import Image from "next/image";
 import { FOCO_INSTITUCIONAL_URL } from "@/lib/site";
 
 export default function SiteFooter() {
   return (
     <footer className="bg-prussia text-white">
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-        <div className="font-display text-base font-bold tracking-tight">
-          FOCO <span className="text-honey">NA REFORMA</span>
-        </div>
+        <Image
+          src="/brand/logo-dark-bg.png"
+          alt="Foco na Reforma"
+          width={1147}
+          height={1200}
+          className="h-14 w-auto"
+        />
 
         <p className="mt-3 max-w-2xl text-sm text-white/70">
           Diagnóstico de Impacto da Reforma Tributária para empresas de todo o Brasil.
