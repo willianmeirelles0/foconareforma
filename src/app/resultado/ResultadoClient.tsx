@@ -8,6 +8,8 @@ import { PRICING } from "@/lib/pricing";
 import { buildElianeMessage } from "@/lib/messages";
 import { buildWhatsAppLink, getElianePhone } from "@/lib/whatsapp";
 import FieldLabel from "@/components/form/FieldLabel";
+import FaqAccordion from "@/components/FaqAccordion";
+import { RESULTADO_FAQ } from "@/lib/faq";
 
 type ContatoState = {
   nome: string;
@@ -80,6 +82,16 @@ export default function ResultadoClient() {
             sob medida para a sua empresa.
           </p>
         </div>
+
+        <div className="mt-10">
+          <h2 className="font-display text-base font-semibold text-prussia">
+            Perguntas frequentes
+          </h2>
+          <div className="mt-4">
+            <FaqAccordion items={RESULTADO_FAQ} />
+          </div>
+        </div>
+
         <a
           href={whatsappLink}
           target="_blank"
@@ -163,21 +175,13 @@ export default function ResultadoClient() {
         </p>
       </div>
 
-      <div className="mt-10 rounded-lg border border-black/10 bg-white px-6 py-6">
+      <div className="mt-10">
         <h2 className="font-display text-base font-semibold text-prussia">
-          Por que não existe atendimento antes do pagamento?
+          Perguntas frequentes
         </h2>
-        <p className="mt-3 font-sans text-sm text-graphite">
-          A Foco Gestão Contábil atende, em grande parte, por indicação. Não
-          temos uma equipe comercial dedicada a vender por telefone ou
-          WhatsApp: toda a nossa equipe está focada em entregar análises de
-          qualidade e cuidar dos negócios dos nossos clientes. Por isso, o
-          processo aqui é direto: você preenche as informações da sua
-          empresa, garante sua vaga e paga com segurança. Assim que o
-          pagamento é confirmado, o Hugo, responsável técnico pelas análises,
-          entra em contato diretamente com você para uma breve explicação e já
-          inicia o seu estudo.
-        </p>
+        <div className="mt-4">
+          <FaqAccordion items={RESULTADO_FAQ} />
+        </div>
       </div>
 
       <form onSubmit={handleCheckout} className="mt-10 space-y-5">
