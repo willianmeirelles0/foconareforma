@@ -65,10 +65,10 @@ export default function HomePage() {
               </p>
             </Reveal>
             <Reveal delayMs={80}>
-              <h1 className="mt-4 max-w-3xl font-serif text-3xl leading-tight text-white sm:text-5xl">
+              <h1 className="mt-4 text-balance font-serif text-3xl leading-tight text-white sm:text-5xl">
                 Até fevereiro de 2027, toda empresa vai decidir o seu regime
-                tributário para a Reforma. A diferença é decidir sabendo
-                quanto isso custa.
+                tributário para a Reforma. A{" "}diferença é decidir
+                sabendo quanto isso custa.
               </h1>
             </Reveal>
             <Reveal delayMs={160}>
@@ -97,7 +97,7 @@ export default function HomePage() {
               width={1147}
               height={1200}
               priority
-              className="h-auto w-64 xl:w-72"
+              className="h-auto w-80 xl:w-96"
             />
           </Reveal>
         </div>
